@@ -1,121 +1,201 @@
 course_id,course_title,course_duration
-1,Java Course Level 1,114
-2,Machine Learning Course Level 1,48
-3,SQL Course Level 3,33
-4,Cyber Security Course Level 1,95
-5,Cloud Computing Course Level 1,23
-6,Java Course Level 1,49
-7,Cyber Security Course Level 3,23
-8,Cyber Security Course Level 1,111
-9,Cyber Security Course Level 2,48
-10,DevOps Course Level 3,55
-11,Python Course Level 1,109
-12,Cloud Computing Course Level 2,55
-13,SQL Course Level 1,117
-14,Web Development Course Level 1,31
-15,Cloud Computing Course Level 1,65
-16,Web Development Course Level 3,53
-17,Python Course Level 3,78
-18,Cyber Security Course Level 1,68
-19,Java Course Level 3,57
-20,AI Fundamentals Course Level 2,93
-21,Data Science Course Level 3,28
-22,Python Course Level 3,49
-23,Machine Learning Course Level 1,49
-24,Java Course Level 2,55
-25,DevOps Course Level 3,66
-26,SQL Course Level 2,65
-27,Data Science Course Level 3,54
-28,Java Course Level 3,101
-29,SQL Course Level 3,113
-30,Data Science Course Level 1,79
-31,Cloud Computing Course Level 2,101
-32,Cyber Security Course Level 1,107
-33,Web Development Course Level 1,49
-34,Python Course Level 2,71
-35,Machine Learning Course Level 1,47
-36,AI Fundamentals Course Level 3,60
-37,Data Science Course Level 3,83
-38,Cloud Computing Course Level 3,78
-39,SQL Course Level 2,37
-40,Data Science Course Level 3,91
-41,Cyber Security Course Level 2,115
-42,AI Fundamentals Course Level 2,94
-43,Cloud Computing Course Level 2,48
-44,SQL Course Level 3,83
-45,Java Course Level 1,34
-46,SQL Course Level 3,40
-47,Cloud Computing Course Level 3,28
-48,Cloud Computing Course Level 2,96
-49,DevOps Course Level 3,52
-50,Cyber Security Course Level 1,107
-51,Java Course Level 3,88
-52,Machine Learning Course Level 3,63
-53,Java Course Level 2,75
-54,SQL Course Level 2,20
-55,Machine Learning Course Level 3,117
-56,SQL Course Level 3,33
-57,Machine Learning Course Level 3,84
-58,AI Fundamentals Course Level 1,39
-59,Web Development Course Level 1,89
-60,Cyber Security Course Level 1,96
-61,Web Development Course Level 2,22
-62,Java Course Level 2,59
-63,Data Science Course Level 1,50
-64,AI Fundamentals Course Level 1,30
-65,DevOps Course Level 1,117
-66,Cyber Security Course Level 1,36
-67,DevOps Course Level 3,41
-68,Machine Learning Course Level 3,97
-69,Cloud Computing Course Level 1,89
-70,Data Science Course Level 3,59
-71,Cloud Computing Course Level 3,103
-72,Web Development Course Level 2,86
-73,DevOps Course Level 1,51
-74,Data Science Course Level 1,63
-75,Python Course Level 3,90
-76,Data Science Course Level 3,48
-77,Python Course Level 1,110
-78,Python Course Level 1,28
-79,Python Course Level 2,29
-80,Cyber Security Course Level 1,55
-81,DevOps Course Level 1,89
-82,SQL Course Level 3,93
-83,AI Fundamentals Course Level 2,51
-84,DevOps Course Level 2,44
-85,Java Course Level 1,104
-86,Cloud Computing Course Level 2,74
-87,Cloud Computing Course Level 2,113
-88,Python Course Level 3,103
-89,Java Course Level 1,71
-90,Web Development Course Level 1,51
-91,Data Science Course Level 1,88
-92,DevOps Course Level 1,74
-93,SQL Course Level 2,79
-94,Data Science Course Level 1,76
-95,Cyber Security Course Level 1,26
-96,Cyber Security Course Level 1,31
-97,Data Science Course Level 1,72
-98,DevOps Course Level 2,47
-99,Cloud Computing Course Level 1,41
-100,Cloud Computing Course Level 1,69
-101,Machine Learning Course Level 2,56
-102,Cloud Computing Course Level 3,113
-103,Cyber Security Course Level 3,111
-104,DevOps Course Level 1,44
-105,Machine Learning Course Level 1,27
-106,AI Fundamentals Course Level 3,89
-107,Python Course Level 3,60
-108,Python Course Level 1,94
-109,DevOps Course Level 3,87
-110,SQL Course Level 1,85
-111,Java Course Level 1,28
-112,AI Fundamentals Course Level 1,106
-113,Data Science Course Level 2,35
-114,AI Fundamentals Course Level 1,94
-115,AI Fundamentals Course Level 1,99
-116,Java Course Level 2,104
-117,AI Fundamentals Course Level 3,86
-118,Web Development Course Level 2,46
-119,Web Development Course Level 1,53
-120,Cloud Computing Course Level 1,105
+1,Course 1 - Professional Skills,50
+2,Course 2 - Professional Skills,17
+3,Course 3 - Professional Skills,11
+4,Course 4 - Professional Skills,57
+5,Course 5 - Professional Skills,27
+6,Course 6 - Professional Skills,25
+7,Course 7 - Professional Skills,24
+8,Course 8 - Professional Skills,18
+9,Course 9 - Professional Skills,57
+10,Course 10 - Professional Skills,16
+11,Course 11 - Professional Skills,53
+12,Course 12 - Professional Skills,57
+13,Course 13 - Professional Skills,44
+14,Course 14 - Professional Skills,15
+15,Course 15 - Professional Skills,47
+16,Course 16 - Professional Skills,37
+17,Course 17 - Professional Skills,12
+18,Course 18 - Professional Skills,11
+19,Course 19 - Professional Skills,15
+20,Course 20 - Professional Skills,23
+21,Course 21 - Professional Skills,24
+22,Course 22 - Professional Skills,42
+23,Course 23 - Professional Skills,48
+24,Course 24 - Professional Skills,11
+25,Course 25 - Professional Skills,45
+26,Course 26 - Professional Skills,22
+27,Course 27 - Professional Skills,55
+28,Course 28 - Professional Skills,51
+29,Course 29 - Professional Skills,54
+30,Course 30 - Professional Skills,44
+31,Course 31 - Professional Skills,36
+32,Course 32 - Professional Skills,24
+33,Course 33 - Professional Skills,38
+34,Course 34 - Professional Skills,47
+35,Course 35 - Professional Skills,27
+36,Course 36 - Professional Skills,10
+37,Course 37 - Professional Skills,58
+38,Course 38 - Professional Skills,20
+39,Course 39 - Professional Skills,54
+40,Course 40 - Professional Skills,37
+41,Course 41 - Professional Skills,31
+42,Course 42 - Professional Skills,27
+43,Course 43 - Professional Skills,19
+44,Course 44 - Professional Skills,23
+45,Course 45 - Professional Skills,58
+46,Course 46 - Professional Skills,31
+47,Course 47 - Professional Skills,16
+48,Course 48 - Professional Skills,15
+49,Course 49 - Professional Skills,34
+50,Course 50 - Professional Skills,16
+51,Course 51 - Professional Skills,32
+52,Course 52 - Professional Skills,32
+53,Course 53 - Professional Skills,48
+54,Course 54 - Professional Skills,26
+55,Course 55 - Professional Skills,12
+56,Course 56 - Professional Skills,56
+57,Course 57 - Professional Skills,39
+58,Course 58 - Professional Skills,44
+59,Course 59 - Professional Skills,17
+60,Course 60 - Professional Skills,34
+61,Course 61 - Professional Skills,15
+62,Course 62 - Professional Skills,45
+63,Course 63 - Professional Skills,28
+64,Course 64 - Professional Skills,50
+65,Course 65 - Professional Skills,49
+66,Course 66 - Professional Skills,33
+67,Course 67 - Professional Skills,46
+68,Course 68 - Professional Skills,22
+69,Course 69 - Professional Skills,55
+70,Course 70 - Professional Skills,14
+71,Course 71 - Professional Skills,12
+72,Course 72 - Professional Skills,52
+73,Course 73 - Professional Skills,24
+74,Course 74 - Professional Skills,59
+75,Course 75 - Professional Skills,28
+76,Course 76 - Professional Skills,15
+77,Course 77 - Professional Skills,24
+78,Course 78 - Professional Skills,16
+79,Course 79 - Professional Skills,34
+80,Course 80 - Professional Skills,27
+81,Course 81 - Professional Skills,39
+82,Course 82 - Professional Skills,50
+83,Course 83 - Professional Skills,33
+84,Course 84 - Professional Skills,20
+85,Course 85 - Professional Skills,33
+86,Course 86 - Professional Skills,32
+87,Course 87 - Professional Skills,23
+88,Course 88 - Professional Skills,52
+89,Course 89 - Professional Skills,27
+90,Course 90 - Professional Skills,54
+91,Course 91 - Professional Skills,53
+92,Course 92 - Professional Skills,51
+93,Course 93 - Professional Skills,14
+94,Course 94 - Professional Skills,48
+95,Course 95 - Professional Skills,50
+96,Course 96 - Professional Skills,20
+97,Course 97 - Professional Skills,44
+98,Course 98 - Professional Skills,56
+99,Course 99 - Professional Skills,25
+100,Course 100 - Professional Skills,20
+101,Course 101 - Professional Skills,39
+102,Course 102 - Professional Skills,34
+103,Course 103 - Professional Skills,27
+104,Course 104 - Professional Skills,50
+105,Course 105 - Professional Skills,54
+106,Course 106 - Professional Skills,45
+107,Course 107 - Professional Skills,24
+108,Course 108 - Professional Skills,53
+109,Course 109 - Professional Skills,30
+110,Course 110 - Professional Skills,59
+111,Course 111 - Professional Skills,59
+112,Course 112 - Professional Skills,13
+113,Course 113 - Professional Skills,24
+114,Course 114 - Professional Skills,12
+115,Course 115 - Professional Skills,30
+116,Course 116 - Professional Skills,35
+117,Course 117 - Professional Skills,27
+118,Course 118 - Professional Skills,14
+119,Course 119 - Professional Skills,23
+120,Course 120 - Professional Skills,46
+121,Course 121 - Professional Skills,55
+122,Course 122 - Professional Skills,30
+123,Course 123 - Professional Skills,23
+124,Course 124 - Professional Skills,51
+125,Course 125 - Professional Skills,41
+126,Course 126 - Professional Skills,35
+127,Course 127 - Professional Skills,51
+128,Course 128 - Professional Skills,39
+129,Course 129 - Professional Skills,19
+130,Course 130 - Professional Skills,26
+131,Course 131 - Professional Skills,18
+132,Course 132 - Professional Skills,25
+133,Course 133 - Professional Skills,57
+134,Course 134 - Professional Skills,45
+135,Course 135 - Professional Skills,44
+136,Course 136 - Professional Skills,26
+137,Course 137 - Professional Skills,57
+138,Course 138 - Professional Skills,47
+139,Course 139 - Professional Skills,37
+140,Course 140 - Professional Skills,47
+141,Course 141 - Professional Skills,35
+142,Course 142 - Professional Skills,33
+143,Course 143 - Professional Skills,24
+144,Course 144 - Professional Skills,18
+145,Course 145 - Professional Skills,42
+146,Course 146 - Professional Skills,41
+147,Course 147 - Professional Skills,15
+148,Course 148 - Professional Skills,58
+149,Course 149 - Professional Skills,13
+150,Course 150 - Professional Skills,17
+151,Course 151 - Professional Skills,19
+152,Course 152 - Professional Skills,50
+153,Course 153 - Professional Skills,20
+154,Course 154 - Professional Skills,60
+155,Course 155 - Professional Skills,53
+156,Course 156 - Professional Skills,37
+157,Course 157 - Professional Skills,48
+158,Course 158 - Professional Skills,14
+159,Course 159 - Professional Skills,34
+160,Course 160 - Professional Skills,34
+161,Course 161 - Professional Skills,48
+162,Course 162 - Professional Skills,39
+163,Course 163 - Professional Skills,43
+164,Course 164 - Professional Skills,26
+165,Course 165 - Professional Skills,45
+166,Course 166 - Professional Skills,10
+167,Course 167 - Professional Skills,53
+168,Course 168 - Professional Skills,56
+169,Course 169 - Professional Skills,17
+170,Course 170 - Professional Skills,53
+171,Course 171 - Professional Skills,44
+172,Course 172 - Professional Skills,58
+173,Course 173 - Professional Skills,27
+174,Course 174 - Professional Skills,59
+175,Course 175 - Professional Skills,51
+176,Course 176 - Professional Skills,31
+177,Course 177 - Professional Skills,17
+178,Course 178 - Professional Skills,28
+179,Course 179 - Professional Skills,37
+180,Course 180 - Professional Skills,20
+181,Course 181 - Professional Skills,39
+182,Course 182 - Professional Skills,10
+183,Course 183 - Professional Skills,56
+184,Course 184 - Professional Skills,56
+185,Course 185 - Professional Skills,26
+186,Course 186 - Professional Skills,42
+187,Course 187 - Professional Skills,58
+188,Course 188 - Professional Skills,21
+189,Course 189 - Professional Skills,42
+190,Course 190 - Professional Skills,16
+191,Course 191 - Professional Skills,50
+192,Course 192 - Professional Skills,29
+193,Course 193 - Professional Skills,50
+194,Course 194 - Professional Skills,42
+195,Course 195 - Professional Skills,48
+196,Course 196 - Professional Skills,22
+197,Course 197 - Professional Skills,19
+198,Course 198 - Professional Skills,33
+199,Course 199 - Professional Skills,58
+200,Course 200 - Professional Skills,20

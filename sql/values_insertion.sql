@@ -232,7 +232,7 @@ GO
 
 -- Inserting data from CSV File.
 BULK INSERT lms.Courses
-FROM '/var/opt/mssql/data/Courses.csv'
+FROM '/var/opt/mssql/data/Courses1.csv'
 WITH (
     FIRSTROW = 2, 
     FIELDTERMINATOR = ',', 
@@ -240,7 +240,7 @@ WITH (
 );
 Go
 BULK INSERT lms.Users
-FROM '/var/opt/mssql/data/Users.csv'
+FROM '/var/opt/mssql/data/Users1.csv'
 WITH (
     FIRSTROW = 2, 
     FIELDTERMINATOR = ',', 
@@ -248,7 +248,7 @@ WITH (
 );
 GO
 BULK INSERT lms.Lessons
-FROM '/var/opt/mssql/data/Lessons.csv'
+FROM '/var/opt/mssql/data/Lessons1.csv'
 WITH (
     FIRSTROW = 2, 
     FIELDTERMINATOR = ',', 
@@ -256,14 +256,14 @@ WITH (
 );
 GO
 BULK INSERT lms.Enrollments
-FROM '/var/opt/mssql/data/Enrollments.csv'
+FROM '/var/opt/mssql/data/Enrollments1.csv'
 WITH (FIRSTROW = 2, 
     FIELDTERMINATOR = ',', 
     ROWTERMINATOR = '\n'
 );
 GO
 BULK INSERT lms.Assessments
-FROM '/var/opt/mssql/data/Assessments.csv'
+FROM '/var/opt/mssql/data/Assessments1.csv'
 WITH (
     FIRSTROW = 2, 
     FIELDTERMINATOR = ',', 
@@ -271,7 +271,7 @@ WITH (
 );
 GO
 BULK INSERT lms.Assessment_Submission
-FROM '/var/opt/mssql/data/Assessment_Submission.csv'
+FROM '/var/opt/mssql/data/Assessment_Submission1.csv'
 WITH (
     FIRSTROW = 2, 
     FIELDTERMINATOR = ',', 
@@ -290,7 +290,7 @@ CREATE TABLE lms.User_Activity_Stage (
 );
 GO
 BULK INSERT lms.User_Activity_Stage
-FROM '/var/opt/mssql/data/User_Activity.csv'
+FROM '/var/opt/mssql/data/User_Activity1.csv'
 WITH (
     FIRSTROW = 2,
     FIELDTERMINATOR = ',',
@@ -321,7 +321,3 @@ SELECT * FROM lms.Enrollments;
 SELECT * FROM lms.Assessments;
 SELECT * FROM lms.Assessment_Submission;
 SELECT * FROM lms.User_Activity;
-
-
-
-

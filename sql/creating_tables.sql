@@ -25,122 +25,115 @@ GO
 
 -- Course table creation.
 CREATE TABLE lms.Courses (
-    course_id INT IDENTITY(1,1) NOT NULL,
+    course_id INT NOT NULL,
     course_title VARCHAR(150) NOT NULL,
-    course_duration INT,
-    CONSTRAINT PK_Course_Id PRIMARY KEY(course_id)
+    course_duration INT NOT NULL,
+    CONSTRAINT PK_Courses 
+        PRIMARY KEY (course_id)
 );
 GO
 
--- User table creation.
 CREATE TABLE lms.Users (
     user_id INT NOT NULL,
     user_name VARCHAR(50) NOT NULL,
     user_email VARCHAR(254) NOT NULL,
-    user_phone VARCHAR(10) NOT NULL,
-    CONSTRAINT PK_User_Id 
-        PRIMARY KEY(user_id),
-    CONSTRAINT UQ_Users_Email  
-        UNIQUE (user_email),
-    CONSTRAINT Check_Phone 
-        CHECK (user_phone LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+    user_phone VARCHAR(15) NOT NULL,
+    CONSTRAINT PK_Users 
+        PRIMARY KEY (user_id),
+    CONSTRAINT UQ_Users_Email 
+        UNIQUE (user_email)
 );
 GO
 
--- Lessons table creation.
-CREATE TABLE lms.Lessons(
-    lesson_id INT NOT NULL,
-    lesson_title VARCHAR(150) NOT NULL,
-    course_id INT,
-    CONSTRAINT PK_Lesson_Key 
-        PRIMARY KEY(lesson_id),
-    CONSTRAINT UQ_lesson_per_course 
-        UNIQUE(course_id, lesson_title),
-    CONSTRAINT FK_Course_Id 
-        FOREIGN KEY(course_id) 
+CREATE TABLE lms.Enrollments (
+    enrollment_id INT NOT NULL,
+    enrollment_date DATE NOT NULL,
+    enrollment_status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+    user_id INT NOT NULL,
+    course_id INT NOT NULL,
+    CONSTRAINT PK_Enrollments 
+        PRIMARY KEY (enrollment_id),
+    CONSTRAINT UQ_User_Course 
+        UNIQUE (user_id, course_id),
+    CONSTRAINT CK_Enrollment_Status 
+        CHECK (enrollment_status IN ('ACTIVE','INACTIVE','COMPLETED')),
+    CONSTRAINT FK_Enrollments_User 
+        FOREIGN KEY (user_id)
+        REFERENCES lms.Users(user_id),
+    CONSTRAINT FK_Enrollments_Course 
+        FOREIGN KEY (course_id)
         REFERENCES lms.Courses(course_id)
 );
 GO
 
--- Enrollments table creation.
-CREATE TABLE lms.Enrollments (
-    enrollment_id INT NOT NULL,
-    enrollment_date date NOT NULL,
-    enrollment_status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
-    user_id INT,
-    course_id INT,
-    CONSTRAINT PK_Enrollment_Id
-        PRIMARY KEY(enrollment_id),
-    CONSTRAINT Check_Status
-        CHECK (enrollment_status in ('ACTIVE','INACTIVE','COMPLETED')),
-    CONSTRAINT FK_Lessons_User_Id
-        FOREIGN KEY(user_id) 
-        REFERENCES lms.Users(user_id),
-    CONSTRAINT FK_Lessons_Course_Id
-        FOREIGN KEY(course_id)
-        REFERENCES lms.Courses(course_id),
-    CONSTRAINT UQ_UserId_CourseID
-        UNIQUE(user_id, course_id)
+CREATE TABLE lms.Lessons (
+    lesson_id INT NOT NULL,
+    lesson_title VARCHAR(150) NOT NULL,
+    course_id INT NOT NULL,
+    CONSTRAINT PK_Lessons 
+        PRIMARY KEY (lesson_id),
+    CONSTRAINT UQ_Lesson_PerCourse 
+        UNIQUE (course_id, lesson_title),
+    CONSTRAINT FK_Lessons_Course 
+        FOREIGN KEY (course_id)
+        REFERENCES lms.Courses(course_id)
 );
 GO
 
--- Assessments table creation.
+
 CREATE TABLE lms.Assessments (
     assessment_id INT NOT NULL,
     assessment_name VARCHAR(150) NOT NULL,
     max_score INT NOT NULL,
-    lesson_id INT,
-    CONSTRAINT PK_Assessment_Id
-        PRIMARY KEY (assessment_id),
-    CONSTRAINT FK_Assessment_Lesson
-        FOREIGN KEY (lesson_id)
-        REFERENCES lms.Lessons(lesson_id),
-    CONSTRAINT UQ_Assessments_PerLesson 
-        UNIQUE (lesson_id, assessment_name)
-);
-GO
-
--- Assessment submission table creation.
-CREATE TABLE lms.Assessment_Submission (
-    submission_id INT NOT NULL,
     lesson_id INT NOT NULL,
-    user_id INT NOT NULL,
-    submission_date date NOT NULL,
-    marks_scored INT NOT NULL DEFAULT 0,
-    CONSTRAINT PK_SubmissionId
-        PRIMARY KEY(submission_id),
-    CONSTRAINT UQ_Lesson_User
-        UNIQUE(lesson_id, user_id),
-    CONSTRAINT CK_Assessments_MarksScored
-        CHECK (marks_scored >= 0 AND marks_scored <= 100),
-    CONSTRAINT FK_Submission_UserId
-        FOREIGN KEY (user_id)
-        REFERENCES lms.Users(user_id),
-    CONSTRAINT FK_Submission_LessonId
+    CONSTRAINT PK_Assessments 
+        PRIMARY KEY (assessment_id),
+    CONSTRAINT UQ_Assessment_PerLesson 
+        UNIQUE (lesson_id, assessment_name),
+    CONSTRAINT FK_Assessments_Lesson 
         FOREIGN KEY (lesson_id)
         REFERENCES lms.Lessons(lesson_id)
 );
 GO
 
--- User Activity table creation.
+CREATE TABLE lms.Assessment_Submission (
+    submission_id INT NOT NULL,
+    assessment_id INT NOT NULL,
+    user_id INT NOT NULL,
+    submission_date DATE NOT NULL,
+    marks_scored INT NOT NULL DEFAULT 0,
+    CONSTRAINT PK_Assessment_Submission 
+        PRIMARY KEY (submission_id),
+    CONSTRAINT UQ_Assessment_User 
+        UNIQUE (assessment_id, user_id),
+    CONSTRAINT CK_Marks_Scored 
+        CHECK (marks_scored >= 0),
+    CONSTRAINT FK_Submission_Assessment 
+        FOREIGN KEY (assessment_id)
+        REFERENCES lms.Assessments(assessment_id),
+    CONSTRAINT FK_Submission_User 
+        FOREIGN KEY (user_id)
+        REFERENCES lms.Users(user_id)
+);
+GO
+
 CREATE TABLE lms.User_Activity (
     activity_id INT IDENTITY(1,1) NOT NULL,
     lesson_id INT NOT NULL,
     user_id INT NOT NULL,
-    activity_status VARCHAR(20) NOT NULL DEFAULT 'NOT STARTED',
+    activity_status VARCHAR(20) NOT NULL DEFAULT 'NOT_STARTED',
     activity_date DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
-    CONSTRAINT PK_Activity_Id 
-        PRIMARY KEY(activity_id),
-    CONSTRAINT CK_Activity_Status
-        CHECK (activity_status in ('NOT STARTED', 'STARTED', 'COMPLETED')),
-    CONSTRAINT FK_Activity_UserId
-        FOREIGN KEY(user_id)
-        REFERENCES lms.Users(user_id),
-    CONSTRAINT FK_Activity_Lesson_Id
-        FOREIGN KEY(lesson_id)
+    CONSTRAINT PK_User_Activity 
+        PRIMARY KEY (activity_id),
+    CONSTRAINT CK_Activity_Status 
+        CHECK (activity_status IN ('NOT_STARTED','STARTED','COMPLETED')),
+    CONSTRAINT FK_Activity_Lesson 
+        FOREIGN KEY (lesson_id)
         REFERENCES lms.Lessons(lesson_id),
+    CONSTRAINT FK_Activity_User 
+        FOREIGN KEY (user_id)
+        REFERENCES lms.Users(user_id)
 );
-GO
 
 -- To check current working Database
 SELECT DB_NAME()
