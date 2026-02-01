@@ -135,3 +135,36 @@ GO
 -- So we can do soft delete that add we can add the status column in the course table where we can update whether 
 -- the courses are available or no. and if we want to delete them We can set the status to archived or deleted and 
 -- when querying we can use the status as ACTIVE to get deltails of only active courses.
+-- Implementing: 
+ALTER TABLE lms.Courses
+ADD course_status VARCHAR(10) NOT NULL DEFAULT 'ACTIVE';
+
+ALTER TABLE lms.Courses
+ADD CONSTRAINT CK_Course_Status
+CHECK (course_status IN ('ACTIVE','DELETED'));
+GO
+
+UPDATE lms.Courses
+SET course_status = 'DELETED'
+WHERE course_id = 101;
+
+CREATE TRIGGER trg_Prevent_Enroll_Deleted_Course
+ON lms.Enrollments
+AFTER INSERT
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM inserted i
+        JOIN lms.Courses c
+            ON c.course_id = i.course_id
+        WHERE c.course_status = 'DELETED'
+    )
+    BEGIN
+        RAISERROR ('Cannot enroll in a deleted course.', 16, 1);
+        ROLLBACK TRANSACTION;
+        RETURN;
+    END
+END;
+GO
+
