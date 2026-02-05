@@ -1,0 +1,2 @@
+Microsoft SQL Server 2019 or later
+SQL Server Management Studio (SSMS) 18+
